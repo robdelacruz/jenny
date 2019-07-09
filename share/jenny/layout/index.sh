@@ -12,7 +12,7 @@ function index_loop {
 function list_item {
   if [ -z "$BREAK" ]; then
 cat << _LOOP_
-  <li class="post-link"><a href="$(echo $POST_URL)"><span class="stamp">$(echo $POST_DATE)</span> <span class="title">$(echo $POST_TITLE)</span></a></li>
+  <li class="post-link"><a href="$(echo $POST_URL)"><span class="stamp">$(echo $POST_DATE_ISO)</span> <span class="title">$(echo $POST_TITLE)</span></a></li>
 _LOOP_
   else
 cat << _LOOP_
@@ -56,7 +56,7 @@ cat << _EOF_
       .post-link { display: table; text-transform: uppercase; margin-bottom: .55em; }
       .post-link a { text-decoration: none; }
       .post-link .title:hover {  text-decoration: underline;  }
-      .post-link .stamp { color: #999; display: table-cell; width: 2.25em; text-align:right; padding-right: 1.5em; }
+      .post-link .stamp { color: #999; display: table-cell; width: 5.66em; text-align:right; padding-right: 1.5em; }
       .post-link .title { color: #333; display: table-cell; vertical-align: top;font-weight: bold; }
       nav a { color: #555; text-decoration: none; } nav a:hover { color: #268bd2}
       nav a+a:before { content: ' • '; }

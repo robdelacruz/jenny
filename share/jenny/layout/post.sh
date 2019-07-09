@@ -21,7 +21,7 @@ cat << _EOF_
           line-height: 1.5em;
         }
         @media (min-width: 736px) { body { font-size: 16px } }
-        article { padding: 0; margin: 1em 0; max-width: 70ch; }
+        article { padding: 0; margin: 1em 0; max-width: 80ch; }
         article a { color: #b58900; }
         article img { max-width: 100% }
         article blockquote { border-left: 2px solid #CCC; }
@@ -40,7 +40,7 @@ cat << _EOF_
         .heading .title:hover { text-decoration: underline; }
         .heading .stamp { color: #999; }
         .heading .stamp,
-        .home { display: inline-block; width: 2.66em; text-align:right; margin-right: 1.5em; }
+        .home { display: inline-block; width: 5.66em; text-align:right; margin-right: 1.5em; }
         .home { text-decoration: none; margin-bottom: 1.5em; text-align: left;  color: #cb4b16; } .home:hover { color: #dc322f; }
         .contents { display: inline-block; max-width: 60ch; vertical-align: top; width: 100%; }
         .contents :first-child { margin-top: 0; }
@@ -55,7 +55,7 @@ cat << _EOF_
     </head>
     <body>
       <article>
-      <div class="heading"><a href="$(echo $POST_URL)"><span class="stamp">$(echo $POST_DATE)</span><h1 class="title">$(echo $POST_TITLE)</h1></a></div>
+      <div class="heading"><a href="$(echo $POST_URL)"><span class="stamp">$(echo $POST_DATE_ISO)</span><h1 class="title">$(echo $POST_TITLE)</h1></a></div>
         <a href="/" class="home">←</a><div class="contents">
         $(echo "$POST_CONTENTS")
         <div class="tags">$(for i in $TAGS; do echo "<a href=\"/tag/$i\">$i</a>"; done;)</div>

@@ -23,6 +23,7 @@ render () {
   POST_TITLE=$title \
     POST_URL="/post/$slug.html" \
     POST_DATE=$(get_post_date "$file") \
+    POST_DATE_ISO=$(get_post_date_iso "$file") \
     POST_CONTENTS=$(cat $RENDER_TEMP_FILE) \
     BLOG_HOST=$BLOG_HOST \
     BLOG_TITLE=$BLOG_TITLE \
@@ -41,6 +42,7 @@ index_insert () {
   local page=$7
 
   local post_date=$(get_post_date "$file")
+  local post_date_iso=$(get_post_date_iso "$file")
   local post_date_rfc822=$(get_post_date_rfc822 "$file")
   local is_page_new=$(( $post_index % $POSTS_PER_PAGE ))
 
@@ -52,7 +54,7 @@ index_insert () {
   fi
 
   # Create the export line for the index.sh template
-  IndexList+=("POST_URL=\"/post/$slug.html\" POST_TITLE=\"$(echo $title | sed 's#\"#\\\"#')\" POST_DATE=\"$post_date\" POST_DATE_RFC822=\"$post_date_rfc822\" TAGNAME=\"$_TAGNAME\"")
+  IndexList+=("POST_URL=\"/post/$slug.html\" POST_TITLE=\"$(echo $title | sed 's#\"#\\\"#')\" POST_DATE=\"$post_date\" POST_DATE_RFC822=\"$post_date_rfc822\" POST_DATE_ISO=\"$post_date_iso\" TAGNAME=\"$_TAGNAME\"")
 
   # Create page when we have enough for a page
   # Or when we don't have any more
