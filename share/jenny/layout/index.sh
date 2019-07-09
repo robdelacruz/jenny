@@ -62,6 +62,9 @@ cat << _EOF_
       nav a+a:before { content: ' • '; }
       header { text-transform: uppercase; }
       header a { text-decoration: none }
+      footer { margin-top: 5ch; font-size: 0.85em; }
+      footer a { color: inherit; }
+      footer hr { border: 0; border-top: 1px solid #CCC; }
     </style>
   </head>
   <body>
@@ -71,6 +74,10 @@ cat << _EOF_
 			$(index_loop)
     </ul>
 		$(nav)
+    <footer>
+        <hr>
+        <a href="${AUTHOR_URL}">${AUTHOR}</a>
+    </footer>
   </body>
 </html>
 _EOF_

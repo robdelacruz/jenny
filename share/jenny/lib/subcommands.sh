@@ -9,6 +9,8 @@ function sub_init() {
   echo
   read -p "  URL: " -i "http://localhost:8000" -e init_hostname
   read -p "  Blog title: " -i "My Blog" -e init_title
+  read -p "  Author: " -i "Majordomo" -e init_author
+  read -p "  Author URL: " -i "mailto:majordomo@localhost" -e init_author_url
   read -p "  Posts per page: " -i 8 -e init_posts_per_page
   read -p "  Build directory: " -i ".dist" -e init_build_dir
   read -p "  File directories: " -i "images files" -e init_static_dirs
@@ -18,6 +20,9 @@ cat << EOF > .blogrc
 BLOG_HOST="${init_hostname}"
 BLOG_TITLE="${init_title}"
 POSTS_PER_PAGE=$init_posts_per_page
+
+AUTHOR="${init_author}"
+AUTHOR_URL="${init_author_url}"
 
 # This is your build directory
 DIST=$init_build_dir

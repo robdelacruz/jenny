@@ -51,6 +51,9 @@ cat << _EOF_
         .fn-handle { padding-right: 1ch; }
         .fnref { line-height: 0 }
         .tags { margin-top: 2.5em; padding-top: 1.5em; font-size: .9em; border-top: 2px solid #EEE; }
+        footer { margin-top: 2ch; font-size: 0.85em; }
+        footer a { color: inherit; }
+        footer hr { border: 0; border-top: 1px solid #CCC; }
       </style>
     </head>
     <body>
@@ -61,6 +64,9 @@ cat << _EOF_
         <div class="tags">$(for i in $TAGS; do echo "<a href=\"/tag/$i\">$i</a>"; done;)</div>
         </div>
       </article>
+      <footer>
+          <a href="/">Home</a>&nbsp;&nbsp;-&nbsp;&nbsp;<a href="${AUTHOR_URL}">${AUTHOR}</a>
+      </footer>
     </body>
   </html>
 _EOF_

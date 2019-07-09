@@ -28,6 +28,8 @@ render () {
     BLOG_HOST=$BLOG_HOST \
     BLOG_TITLE=$BLOG_TITLE \
     TAGS=$tags \
+    AUTHOR=$AUTHOR \
+    AUTHOR_URL=$AUTHOR_URL \
     $LAYOUT_DIR/post.sh > $destination
 }
 
@@ -81,6 +83,8 @@ index_insert () {
         TAGNAME=$_TAGNAME \
         BLOG_HOST=$BLOG_HOST \
         BLOG_TITLE=$BLOG_TITLE \
+        AUTHOR=$AUTHOR \
+        AUTHOR_URL=$AUTHOR_URL \
         $LAYOUT_DIR/index.sh > "$_DIST/index.html"
 
       echo "$T ⌁ Generating RSS feed"
@@ -90,6 +94,8 @@ index_insert () {
         TAGNAME=$_TAGNAME \
         BLOG_HOST=$BLOG_HOST \
         BLOG_TITLE=$BLOG_TITLE \
+        AUTHOR=$AUTHOR \
+        AUTHOR_URL=$AUTHOR_URL \
         $LAYOUT_DIR/rss2.sh > "$_DIST/feed.xml"
 
     else
@@ -104,6 +110,8 @@ index_insert () {
         TAGNAME=$_TAGNAME \
         BLOG_HOST=$BLOG_HOST \
         BLOG_TITLE=$BLOG_TITLE \
+        AUTHOR=$AUTHOR \
+        AUTHOR_URL=$AUTHOR_URL \
         $LAYOUT_DIR/index.sh > "$_DIST/page/${page}.html"
     fi
 
